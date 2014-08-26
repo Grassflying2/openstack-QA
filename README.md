@@ -2,4 +2,4 @@ openstack-QA
 ============
 
 
-admin\_token = ADMIN\_TOKEN = 8ec1d36f59b727301701
+admin\_token = ADMIN\_TOKEN = 29ed8f65ea8c2d616dce
