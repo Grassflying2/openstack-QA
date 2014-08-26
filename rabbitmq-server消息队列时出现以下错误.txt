@@ -1,0 +1,31 @@
+openstack安装rabbitmq-server消息队列时出现以下错误：
+
+Unpacking rabbitmq-server (from .../rabbitmq-server_2.5.0-1ubuntu2_all.deb) ...
+Processing triggers for man-db ...
+Processing triggers for ureadahead ...
+Setting up rabbitmq-server (2.5.0-1ubuntu2) ...
+Starting rabbitmq-server: FAILED - check /var/log/rabbitmq/startup_{log, _err}
+rabbitmq-server.
+invoke-rc.d: inits_cript rabbitmq-server, action "start" failed.
+dpkg: error processing rabbitmq-server (--configure):
+subprocess installed post-installation s_cript returned error exit status 1
+Errors were encountered while processing:
+rabbitmq-server
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+
+因为安装完成后，在启动rabbitmq-server时会检测hostname和hosts记录的对应关系
+
+解决方法：
+
+查看hostname
+
+# hostname 
+  ubuntu6
+
+配置hosts文件
+# cat /etc/hosts |grep ubuntu6
+  127.0.0.1    ubuntu6
+
+重启服务：
+
+/etc/init.d/rabbitmq-server start
