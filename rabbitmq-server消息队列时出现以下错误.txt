@@ -1,3 +1,5 @@
+www.tuling123.com
+
 openstack安装rabbitmq-server消息队列时出现以下错误：
 
 Unpacking rabbitmq-server (from .../rabbitmq-server_2.5.0-1ubuntu2_all.deb) ...
